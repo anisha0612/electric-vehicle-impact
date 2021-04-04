@@ -1,0 +1,23 @@
+
+.miles-range-container{
+text-align: center;
+margin:1em 5% ;
+}
+
+.miles-range {
+
+ letter-spacing: 0.08em;
+ font-weight: 600;
+ width: 60%;
+ margin:0 20%;
+ color: #ffbb00;
+   
+}
+
+.miles-range-label{
+/* text-transform: uppercase; */
+ font-size: 1.1em;
+ margin: 1rem 0;
+}
+
+

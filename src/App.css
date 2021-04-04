@@ -13,3 +13,20 @@ body {
   margin: 2em 0;
 }
 
+.select-container {
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  width: 50%;
+  margin: 1em 25%;
+}
+
+.select-label {
+  text-transform: uppercase;
+  font-size: 1.1em;
+  margin: 1rem 0;
+}
+
+.select-control {
+  color: #ffbb00;
+
+}
