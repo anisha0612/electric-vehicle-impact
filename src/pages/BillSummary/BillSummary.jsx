@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
+// Component to display the EV impact on Electric Bill
+
 const BillSummary = ({ data }) => {
   // Check if the data received is not empty, then render the bill summary
   if (Object.keys(data).length !== 0) {

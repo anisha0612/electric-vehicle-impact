@@ -13,11 +13,14 @@ const App = () => {
   return (
     <div className='App'>
       <Switch>
+        {/* Home Page which takes the input from consumer */}
         <Route
           exact
           path='/'
           component={() => <HomePage setData={setData} />}
         />
+
+        {/* Summary Page which displays the impact on EV on Electric Bill */}
         <Route
           exact
           path='/summary'

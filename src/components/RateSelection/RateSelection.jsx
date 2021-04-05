@@ -1,6 +1,8 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
+// Component to collect customer Electric Rate Selection
+
 const RateSelection = ({ rate, handleRateChange }) => {
   return (
     <div>

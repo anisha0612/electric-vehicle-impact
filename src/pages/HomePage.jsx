@@ -15,15 +15,12 @@ const HomePage = (params) => {
     time: "night",
   });
 
-  // state to hold bill impact
-  //   const [billImpact, setBillImpact] = useState({});
-
   // Handling Form input change
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // On Calculate Click
+  // On Calculate the Electric bill on button click
   const handleSubmit = (e) => {
     e.preventDefault();
     e.stopPropagation();

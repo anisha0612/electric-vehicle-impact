@@ -5,8 +5,10 @@ import TimeSlot from "../TimeSlot/TimeSlot.jsx";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+// Component which handles the form input from Consumer
+
 const FormInput = ({ form, handleChange, handleSubmit }) => {
-  console.log(form);
+  // console.log(form);
   return (
     <div>
       <Form>

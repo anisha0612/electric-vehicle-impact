@@ -2,6 +2,8 @@ import React from "react";
 import { Form } from "react-bootstrap";
 import "./MilesRange.css";
 
+// Component for collecting customer miles input
+
 const MilesRange = ({ miles, handleMilesChange }) => {
   return (
     <div className='miles-range-container'>

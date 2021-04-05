@@ -1,6 +1,8 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
+// Component to collect customer charging duration
+
 const TimeSlot = ({ time, handleTimeSelect }) => {
   return (
     <div>
