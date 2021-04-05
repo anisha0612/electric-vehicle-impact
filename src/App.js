@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Switch, Route, Redirect } from "react-router";
+import React, { useState } from "react";
+import { Switch, Route } from "react-router";
 import HomePage from "./pages/HomePage.jsx";
 import BillSummary from "./pages/BillSummary/BillSummary.jsx";
 
@@ -8,13 +8,8 @@ import "./App.css";
 const App = () => {
   const [data, setData] = useState({});
 
-  // Object.keys(data).length !== 0 ? <BillSummary data={data} /> : <HomePage />;
-
   console.log(data);
-  console.log(Object.keys(data).length);
-  if (Object.keys(data).length > 0) {
-    <BillSummary data={data} />;
-  }
+
   return (
     <div className='App'>
       <Switch>
