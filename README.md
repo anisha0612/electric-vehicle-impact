@@ -1,6 +1,6 @@
 # Electric Vehicle Impact
 
-This is a simple project which determines the electricity consumption by EV and it's impact on electric bill.
+This is a simple project which determines the electricity consumption by EV and it impacts on the electric bill.
 
 It takes the following input from the consumer:
 
@@ -12,6 +12,6 @@ Based on the above input, the electric bill is calculated and the consumer is su
 
 To get started with this project :
 
-` 1. git clone`
-`2. yarn`
-` 3. yarn start`
+ ` 1. git clone`
+ ` 2. yarn`
+ ` 3. yarn start`
