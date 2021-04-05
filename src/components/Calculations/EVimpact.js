@@ -11,7 +11,7 @@
 //  TOU Rate - Rate B is a TOU rate of $0.20/kWh between noon and 6pm,
 // and $0.08 / kWh otherwise
 
-export const EVBill = (miles, rate, time) => {
+export const EVBill = (miles, time) => {
   //  *  Flat Rate (Rate A)
   //   power consumed per hour for non - EV load is 0.93 kWh
   //   EV load profile per mile is 0.3 kWh
@@ -21,21 +21,21 @@ export const EVBill = (miles, rate, time) => {
   let totalBillFlat = 0.15 * (evLoadProfileFlat + nonEvLoadFlat);
 
   // * TOU Rate (Rate B)
-  //  based on reference data power consumed by home between noon - 6pm and otherwise is 0.93 kWh
+  //  based on reference data power consumed by home
+  // between noon - 6pm is  1.15 kWh
+  // and otherwise is 2.24 kWh
   // Rate $0.20/kWh between noon and 6pm
   // Rate for any other time is $0.08 / kWh
 
   // * Calculate the bill for the day based on the above data
   // non EV load profile
 
-  const nonEvLoadTou = 0.2 * 0.93 + 0.08 * 0.93;
+  const nonEvLoadTou = (0.2 * 1.15 + 0.08 * 2.24) * 365;
 
   // Calculate EV load profile with data EV miles per yer -
-  // divide miles per year by 365 to get average miles per day
   // and multiply miles per day with power consumption 0.3 kWh
 
-  let milesPerDay = miles / 365;
-  let evLoadProfile = milesPerDay * 0.3;
+  let evLoadProfile = miles * 0.3;
   let totalBillTou;
 
   // if Ev is charged between noon to 6 pm rate applied is $0.20/kWh, otherwise $0.08 / kWh
@@ -66,8 +66,5 @@ export const TimeOfUseBill = () => {
   // Rate for any other time is $0.08 / kWh
 
   // * Calculate the bill for the day based on the above data and then calculate for the whole year
-  const touBillPerDay = 0.2 * 0.93 + 0.08 * 0.93;
-
-  // * Bill per year for TOU Rate is
-  return touBillPerDay * 365;
+  return (0.2 * 1.15 + 0.08 * 2.24) * 365;
 };

@@ -1,32 +1,33 @@
-import React, { useState } from "react";
-import { Switch, Route } from "react-router";
-import FormInput from "./pages/FormInput/FormInput.jsx";
+import React, { useState, useEffect } from "react";
+import { Switch, Route, Redirect } from "react-router";
+import HomePage from "./pages/HomePage.jsx";
 import BillSummary from "./pages/BillSummary/BillSummary.jsx";
+
 import "./App.css";
 
 const App = () => {
-  const [form, setForm] = useState({
-    miles: 10000,
-    rate: "A",
-    time: "night",
-  });
+  const [data, setData] = useState({});
 
-  // Handling Form input change
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  // Object.keys(data).length !== 0 ? <BillSummary data={data} /> : <HomePage />;
 
+  console.log(data);
+  console.log(Object.keys(data).length);
+  if (Object.keys(data).length > 0) {
+    <BillSummary data={data} />;
+  }
   return (
     <div className='App'>
       <Switch>
         <Route
           exact
           path='/'
-          component={() => (
-            <FormInput handleChange={handleChange} form={form} />
-          )}
+          component={() => <HomePage setData={setData} />}
         />
-        <Route exact path='/summary' component={BillSummary} />
+        <Route
+          exact
+          path='/summary'
+          component={() => <BillSummary data={data} />}
+        />
       </Switch>
     </div>
   );
