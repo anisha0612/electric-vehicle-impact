@@ -1,6 +1,7 @@
 import React from "react";
 
-const BillSummary = () => {
+const BillSummary = ({ billData }) => {
+  console.log(billData);
   return <div>Summary</div>;
 };
 

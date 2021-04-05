@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import MilesRange from "../../components/MilesRange/MilesRange.jsx";
-import RateSelection from "../../components/RateSelection/RateSelection.jsx";
-import TimeSlot from "../../components/TimeSlot/TimeSlot.jsx";
-import { Link } from "react-router-dom";
+import React from "react";
+import MilesRange from "../MilesRange/MilesRange.jsx";
+import RateSelection from "../RateSelection/RateSelection.jsx";
+import TimeSlot from "../TimeSlot/TimeSlot.jsx";
 import { Button, Form } from "react-bootstrap";
 
-const FormInput = ({ form, handleChange }) => {
+const FormInput = ({ form, handleChange, handleSubmit }) => {
   console.log(form);
   return (
     <div>
@@ -25,11 +24,14 @@ const FormInput = ({ form, handleChange }) => {
         <div>
           <TimeSlot form={form.time} handleTimeSelect={handleChange} />
         </div>
-        <Link to='/summary'>
-          <Button variant='warning' style={{ fontWeight: "700" }}>
-            Calculate
-          </Button>
-        </Link>
+
+        <Button
+          variant='warning'
+          onClick={handleSubmit}
+          // to={{ path: "/summary", state: { billData: billData } }}
+          style={{ fontWeight: "700" }}>
+          Calculate
+        </Button>
       </Form>
     </div>
   );
