@@ -27,13 +27,14 @@ const HomePage = (params) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    let miles, time;
+    let miles, time, rate;
+    rate = form.rate;
     miles = form.miles;
     time = form.time;
     let totalBill = EVBill(miles, time);
     let b1Flat = FlatRateBill();
     let b1Tou = TimeOfUseBill();
-    params.setData({ ...totalBill, b1Flat, b1Tou });
+    params.setData({ ...totalBill, b1Flat, b1Tou, rate });
   };
 
   return (

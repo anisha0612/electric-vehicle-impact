@@ -3,6 +3,7 @@ import MilesRange from "../MilesRange/MilesRange.jsx";
 import RateSelection from "../RateSelection/RateSelection.jsx";
 import TimeSlot from "../TimeSlot/TimeSlot.jsx";
 import { Button, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const FormInput = ({ form, handleChange, handleSubmit }) => {
   console.log(form);
@@ -25,12 +26,10 @@ const FormInput = ({ form, handleChange, handleSubmit }) => {
           <TimeSlot form={form.time} handleTimeSelect={handleChange} />
         </div>
 
-        <Button
-          variant='warning'
-          onClick={handleSubmit}
-          // to={{ path: "/summary", state: { billData: billData } }}
-          style={{ fontWeight: "700" }}>
-          Calculate
+        <Button variant='warning' onClick={handleSubmit} className='btn'>
+          <Link to='/summary' style={{ color: "rgba(15, 15, 15, 0.7)" }}>
+            Calculate
+          </Link>
         </Button>
       </Form>
     </div>
